@@ -12,12 +12,7 @@ import java.util.concurrent.Executors;
 // Super-minimal, not production-grade. For class demo only.
 public final class MongoHelper {
 
-    private static final String MONGO_URI = // MongoDB connection URL
-            "mongodb://rileymest:zF1xq96UsAWaS1rn@" +
-            "ac-xuz4ndt-shard-00-00.zkbu9dn.mongodb.net:27017," +
-            "ac-xuz4ndt-shard-00-01.zkbu9dn.mongodb.net:27017," +
-            "ac-xuz4ndt-shard-00-02.zkbu9dn.mongodb.net:27017/" +
-            "?ssl=true&replicaSet=atlas-7y6nuq-shard-0&authSource=admin&retryWrites=true&w=majority";
+    private static final String MONGO_URI = ""; // MongoDB connection URL
     private static final String DB_NAME = "InventoryManager";
     private static MongoHelper INSTANCE;
     private final ExecutorService io = Executors.newSingleThreadExecutor();
@@ -214,3 +209,4 @@ public final class MongoHelper {
         });
     }
 }
+
