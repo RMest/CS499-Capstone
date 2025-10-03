@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 // Super-minimal, not production-grade. For class demo only.
 public final class MongoHelper {
 
+                        // PUT MONGO DB DATABASE HERE!!!!!!!!!
     private static final String MONGO_URI = ""; // MongoDB connection URL
     private static final String DB_NAME = "InventoryManager";
     private static MongoHelper INSTANCE;
@@ -209,4 +210,5 @@ public final class MongoHelper {
         });
     }
 }
+
 
