@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/light_grey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:contentDescription="@string/background_image"
+        android:src="@mipmap/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/settings"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/toolBar"
+        app:layout_constraintTop_toTopOf="@id/toolBar"
+        app:layout_constraintBottom_toBottomOf="@id/toolBar"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/closeSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/close"
+        android:src="@drawable/outline_arrow_back_24"
+        android:onClick="buttonCloseSettings"
+        app:backgroundTint="#5E5E5E"
+        app:tint="#FFFFFF"
+        app:fabCustomSize="50dp"
+        app:layout_constraintEnd_toEndOf="@id/toolBar"
+        app:layout_constraintTop_toTopOf="@id/toolBar"
+        app:layout_constraintBottom_toBottomOf="@id/toolBar" />
+
+    <TextView
+        android:id="@+id/textUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Username:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textUsernameSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/user"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:layout_constraintStart_toEndOf="@id/textUser" />
+
+    <Button
+        android:id="@+id/buttonChangePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="buttonChangePassword"
+        android:text="@string/changePassword"
+        app:layout_constraintTop_toBottomOf="@id/textUser"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textGridAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:text="Grid Column Amount:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonChangePassword"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textGridNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/gridNumber"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonChangePassword"
+        app:layout_constraintStart_toEndOf="@id/textGridAmount" />
+
+    <SeekBar
+        android:id="@+id/seekBarGridAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:min="2"
+        android:max="5"
+        app:layout_constraintTop_toBottomOf="@id/textGridAmount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonChangeSMSPerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:onClick="buttonGoToSettings"
+        android:text="@string/changeSMSPerms"
+        app:layout_constraintTop_toBottomOf="@id/seekBarGridAmount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        android:onClick="buttonLogOut"
+        android:text="@string/logOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
