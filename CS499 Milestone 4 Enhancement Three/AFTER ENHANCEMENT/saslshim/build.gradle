@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.example.saslshim'   // any namespace; doesn't affect the javax.* classes
+    compileSdk 36
+
+    defaultConfig {
+        minSdk 21
+    }
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_11
+    targetCompatibility JavaVersion.VERSION_11
+}

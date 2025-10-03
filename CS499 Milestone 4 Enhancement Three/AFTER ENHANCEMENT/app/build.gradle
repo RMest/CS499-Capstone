@@ -1,0 +1,58 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.rileymest'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.example.rileymest"
+        minSdk 34
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    packaging {
+        resources {
+            excludes += "META-INF/native-image/org.mongodb/bson/native-image.properties"
+        }
+    }
+}
+
+dependencies {
+
+    implementation('org.mongodb:mongodb-driver-sync:4.11.1') {
+        exclude group: 'org.mongodb', module: 'bson-record-codec'
+    }
+    implementation project(":saslshim")
+
+    implementation libs.gson
+    implementation libs.recyclerview
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
+
+configurations.configureEach {
+    resolutionStrategy {
+        force 'org.mongodb:mongodb-driver-sync:4.11.1'
+        force 'org.mongodb:mongodb-driver-core:4.11.1'
+        force 'org.mongodb:bson:4.11.1'
+    }
+}
