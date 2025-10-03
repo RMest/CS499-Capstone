@@ -1,0 +1,45 @@
+plugins {
+    id 'application'
+    id 'eclipse'
+}
+
+repositories {
+    mavenCentral()
+}
+
+def lwjglVersion = '3.3.4'
+
+dependencies {
+    implementation platform("org.lwjgl:lwjgl-bom:${lwjglVersion}")
+
+
+    implementation "org.lwjgl:lwjgl"
+    implementation "org.lwjgl:lwjgl-glfw"
+    implementation "org.lwjgl:lwjgl-opengl"
+    implementation "org.lwjgl:lwjgl-stb"
+
+
+    runtimeOnly "org.lwjgl:lwjgl::natives-windows"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::natives-windows"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::natives-windows"
+    runtimeOnly "org.lwjgl:lwjgl-stb::natives-windows"
+
+    runtimeOnly "org.lwjgl:lwjgl::natives-linux"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::natives-linux"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::natives-linux"
+    runtimeOnly "org.lwjgl:lwjgl-stb::natives-linux"
+
+    runtimeOnly "org.lwjgl:lwjgl::natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl-stb::natives-macos"
+}
+
+application {
+    mainClass = "main.java.Main"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 24
+}
