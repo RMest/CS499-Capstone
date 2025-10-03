@@ -8,5 +8,10 @@ Installation should be as simple as open the project in android studio and it sh
 ## Add your database!
 
 1. Create an account on MongoDB Atlas.
-2. Get the NON SVC url and paste in in the MONGO_URI input in MongoHelper.java.
-3. Once this is done, the app should connect to your database and run properly.
+
+2. Create a database.
+
+3. Get the NON SVC url and paste in in the MONGO_URI input in MongoHelper.java.
+
+4. Once this is done, the app should connect to your database and run properly.
+
